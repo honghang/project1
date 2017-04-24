@@ -80,7 +80,6 @@ namespace CRUD_OnlineStore.Controllers
             ViewBag.categoryId = new SelectList(categories, "CategoryId", "CategoryName");
 
             return View();
-
         }
 
         [HttpPost]
@@ -90,7 +89,7 @@ namespace CRUD_OnlineStore.Controllers
             if (ModelState.IsValid)
             {
                 if (file.ContentLength > 0)
-                {    //check PNG, GIF, JPG
+                {    // PNG, GIF, JPG
                     string extension = Path.GetExtension(file.FileName).ToLower();
                     if (extension != ".png" && extension != ".gif" && extension != ".jpg")
                     {
